@@ -1,0 +1,51 @@
+{
+  "name": "market-scale-test-suite",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx playwright test",
+    "lint": "npx eslint \"**/*.ts\"",
+    "typecheck": "tsc --noEmit",
+    "docker": "docker-compose up --build",
+    "test:headed": "npx playwright test --headed",
+    "allure": "npx playwright test --reporter=line,allure-playwright",
+    "allure:report": "allure generate allure-results --clean -o allure-report",
+    "allure:open": "allure open allure-report",
+    "serve:allure": "npm run allure:report && npm run allure:open",
+    "html": "npx playwright test --reporter=html",
+    "serve:html": "npx playwright show-report",
+    "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json,md}\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@eslint/js": "^9.39.1",
+    "@playwright/test": "^1.56.1",
+    "@types/jsonwebtoken": "^9.0.10",
+    "@types/node": "^22.13.1",
+    "@typescript-eslint/eslint-plugin": "^8.48.0",
+    "@typescript-eslint/parser": "^8.48.0",
+    "allure-commandline": "^2.34.0",
+    "allure-playwright": "^3.4.1",
+    "eslint": "^9.39.1",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-playwright": "^2.3.0",
+    "eslint-plugin-prettier": "^5.5.4",
+    "globals": "^16.5.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.1.0",
+    "prettier": "^3.5.3"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "playwright": "^1.56.1"
+  },
+  "lint-staged": {
+    "*.{js,ts,tsx,jsx,md,json}": [
+      "prettier --write",
+      "eslint --fix"
+    ]
+  }
+}

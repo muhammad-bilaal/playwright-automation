@@ -1,0 +1,15 @@
+# Playwright
+node_modules
+test-results
+playwright-report
+blob-report
+playwright/.cache
+.env
+allure-report
+allure-results
+storageState.json
+.DS_Store
+.idea
+TestAutomationKey-devops.key
+TestAutomationKey-flows2prod.key
+.DS_Store
